@@ -1,4 +1,4 @@
-module mux8 (sw0, sw1, select, out);
+module mux (sw0, sw1, select, out);
     
     // Define inputs and outputs
     input wire sw0, sw1;
@@ -28,7 +28,7 @@ module mux8 (sw0, sw1, select, out);
         (w7, sw0, sw1);
     
     // Switch case for mux selector
-    always @(select) 
+    always @(select, sw0, sw1)
     case (select)
         3'b000 : out = w0;
         3'b001 : out = w1;
