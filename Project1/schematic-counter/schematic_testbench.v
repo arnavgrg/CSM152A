@@ -33,11 +33,11 @@ module schematic_testbench;
 	
 	always 
 	begin
-    clk = 1'b1; 
-    #10; // high for 20 * timescale = 20 ns
+    	clk = 1'b1; 
+    	#10; // high for 20 * timescale = 20 ns
 
-    clk = 1'b0;
-    #10; // low for 20 * timescale = 20 ns
+    	clk = 1'b0;
+    	#10; // low for 20 * timescale = 20 ns
 	end
 	
 	always @(posedge clk)
