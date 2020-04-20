@@ -1,0 +1,3 @@
+module schematic-counter();
+
+endmodule
