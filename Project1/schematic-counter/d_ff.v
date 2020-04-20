@@ -1,8 +1,10 @@
 module d_ff(
-    input wire clk, reset;
-    input wire d, 
-    output reg q
+    clk, reset, d, q
 );
+
+    input wire clk, reset;
+    input wire d;
+    output reg q;
 
     always @(posedge clk, posedge reset) 
     begin
