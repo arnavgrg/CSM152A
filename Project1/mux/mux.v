@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module mux (sw0, sw1, select, out);
     
     // Define inputs and outputs

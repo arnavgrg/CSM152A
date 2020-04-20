@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module schematic_counter(
     clk, reset, d0, d1, d2, d3, result
 );
@@ -9,10 +11,10 @@ module schematic_counter(
 	 
     initial
     begin
-    result[0] = 0;
-    result[1] = 0;
-    result[2] = 0;
-    result[3] = 0;
+        result[0] = 0;
+        result[1] = 0;
+        result[2] = 0;
+        result[3] = 0;
     end
     
     // Define additional wires

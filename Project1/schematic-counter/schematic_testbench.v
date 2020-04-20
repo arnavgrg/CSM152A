@@ -42,7 +42,7 @@ module schematic_testbench;
     	#10; // low for 20 * timescale = 20 ns
 	end
 	
-	always @(posedge clk)
+	always @(posedge clk, posedge reset)
 	begin		
 		#30;
 		$display("Counter=%b%b%b%b", d3, d2, d1, d0);
