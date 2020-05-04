@@ -42,7 +42,7 @@ module FPCVT(
 		
 		// 1. If negative, we must invert the 2s complement format.
 		if (D[12] == 1'b1)
-			data = ~D[12:0] + 1;
+			data = ~D[12:0] + 1'b1;
 		else
 			data = D[12:0];
 		
@@ -89,11 +89,17 @@ module FPCVT(
 				F = data[10:6];
 				sixthbit = data[5];
 			end			
-		else //1 leading zero (at bare minimum, this must always be the case)
+		else if (data[12] == 1'b0) // 1 leading zero
 			begin 
 				E = 3'b111;
 				F = data[11:7];
 				sixthbit = data[6];
+			end
+		else // No leading zeros: Only happens if input is -4096
+			begin
+				E = 3'b111;
+				F = 5'b11111;
+				sixthbit = 1'b1;
 			end
 
 	   // 3. Check for rounding based on value of sixthbit
