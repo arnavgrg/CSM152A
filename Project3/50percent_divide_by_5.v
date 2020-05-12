@@ -50,6 +50,6 @@
 			clk_neg <= clk_neg + 1'b1;
 	end
 	
-	assign clk_div_5 = ((clk_pos > (5>>1))|(clk_neg > (5>>1)));
+	assign clk_div_5 = ((clk_pos > 2'b10)|(clk_neg > 2'b10));
 
 endmodule
